@@ -6,6 +6,7 @@ const EasyMode = () => {
   const [isGameOn, setIsGameOn] = useState(false);
   const [isTargetOn, setIsTargetOn] = useState(false);
   const [targetPosition, setTargetPosition] = useState();
+  const [points, setPoints] = useState(0);
 
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
@@ -45,6 +46,7 @@ const EasyMode = () => {
 
   const hitTarget = () => {
     setIsTargetOn(false);
+    setPoints((prev) => prev + 1);
   };
 
   return (
@@ -58,6 +60,7 @@ const EasyMode = () => {
             Start Game
           </button>
         )}
+        <h3>Points: {points}</h3>
       </header>
       <img
         style={cursorStyle}
