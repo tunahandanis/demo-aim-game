@@ -38,6 +38,21 @@ export default function Home() {
         alt="grab cursor"
         draggable="false"
       />
+
+      <div className="guide">
+        <h2>Guide</h2>
+        <p>
+          Pick cryptocurrencies to win points <br />
+          Pick fiat currencies to lose points
+        </p>
+        <p>
+          Win/lose 1 point per currency in easy mode, 2 in medium, 3 in hard
+          mode
+        </p>
+        <p>
+          You need 25 points to enter medium mode and 50 points for hard mode
+        </p>
+      </div>
     </main>
   );
 }
