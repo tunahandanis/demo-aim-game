@@ -1,6 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 
+import FinishModal from "../../components/finish-modal";
+
+import { usePointsContext } from "../../context/context.js";
+
 const iconPathArray = [
   "/static/icons/bitcoin.png",
   "/static/icons/ethereum.png",
@@ -11,10 +15,15 @@ const iconPathArray = [
 ];
 
 const EasyMode = () => {
+  /*
+  ===========
+  STATE HOOKS
+  ===========
+  */
+
   const [cursorStyle, setCursorStyle] = useState();
   const [isGameOn, setIsGameOn] = useState(false);
   const [isTargetOn, setIsTargetOn] = useState(false);
-  const [points, setPoints] = useState(0);
   const [targetSpecs, setTargetSpecs] = useState({
     iconPath: "/static/icons/bitcoin.png",
 
@@ -23,6 +32,21 @@ const EasyMode = () => {
   });
   const [countdown, setCountdown] = useState(10);
   const [isCountdownOn, setIsCountdownOn] = useState(false);
+  const [isGameFinished, setIsGameFinished] = useState(false);
+
+  /*
+  =======
+  CONTEXT
+  =======
+  */
+
+  const { points, updatePoints } = usePointsContext();
+
+  /*
+  ============
+  EFFECT HOOKS
+  ============
+  */
 
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
@@ -51,12 +75,24 @@ const EasyMode = () => {
     countdownRef.current = countdown;
   }, [countdown]);
 
+  /*
+  =========
+  REF HOOKS
+  =========
+  */
+
   const containerRef = useRef();
   const intervalRef = useRef();
 
   // USING REF HOOKS TO MAKE UPDATED STATE VALUE WORK INSIDE CALLBACK FUNCTION OF SETINTERVAL
   const countdownTimerRef = useRef();
   const countdownRef = useRef();
+
+  /*
+  =========
+  FUNCTIONS
+  =========
+  */
 
   const startGame = () => {
     setIsGameOn(true);
@@ -86,9 +122,9 @@ const EasyMode = () => {
 
   const hitTarget = () => {
     setIsTargetOn(false);
-    if (targetSpecs.isCrypto) setPoints((prev) => prev + 1);
+    if (targetSpecs.isCrypto) updatePoints(points + 1);
     else {
-      if (points > 0) setPoints((prev) => prev - 1);
+      if (points > 0) updatePoints(points - 1);
     }
   };
 
@@ -96,11 +132,22 @@ const EasyMode = () => {
     if (countdownRef.current > 0) {
       setCountdown((prev) => prev - 1);
     } else {
-      setIsGameOn(false);
-      setIsTargetOn(false);
-      setIsCountdownOn(false);
+      finishGame();
     }
   };
+
+  const finishGame = () => {
+    setIsGameOn(false);
+    setIsTargetOn(false);
+    setIsCountdownOn(false);
+    setIsGameFinished(true);
+  };
+
+  /*
+  ======
+  RETURN
+  ======
+  */
 
   return (
     <main>
@@ -137,6 +184,8 @@ const EasyMode = () => {
           />
         )}
       </div>
+
+      {isGameFinished && <FinishModal />}
     </main>
   );
 };
