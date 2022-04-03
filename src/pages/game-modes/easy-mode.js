@@ -1,12 +1,26 @@
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 
+const iconPathArray = [
+  "/static/icons/bitcoin.png",
+  "/static/icons/ethereum.png",
+  "/static/icons/binance.png",
+  "/static/icons/dollar-symbol.png",
+  "/static/icons/euro.png",
+  "/static/icons/pound-sterling.png",
+];
+
 const EasyMode = () => {
   const [cursorStyle, setCursorStyle] = useState();
   const [isGameOn, setIsGameOn] = useState(false);
   const [isTargetOn, setIsTargetOn] = useState(false);
-  const [targetPosition, setTargetPosition] = useState();
   const [points, setPoints] = useState(0);
+  const [targetSpecs, setTargetSpecs] = useState({
+    iconPath: "/static/icons/bitcoin.png",
+
+    isCrypto: true,
+    position: null,
+  });
 
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
@@ -34,10 +48,18 @@ const EasyMode = () => {
     const containerHeight = containerRef.current.offsetHeight;
     const containerWidth = containerRef.current.offsetWidth;
 
-    const randomTop = Math.random() * (containerHeight - 150);
-    const randomLeft = Math.random() * (containerWidth - 150);
+    const randomTop = Math.random() * (containerHeight - 200);
+    const randomLeft = Math.random() * (containerWidth - 200);
 
-    setTargetPosition({ top: randomTop + "px", left: randomLeft + "px" });
+    const iconIndex = Math.floor(Math.random() * 6);
+
+    const targetIcon = iconPathArray[iconIndex];
+
+    setTargetSpecs({
+      iconPath: targetIcon,
+      isCrypto: iconIndex <= 2,
+      position: { top: randomTop + "px", left: randomLeft + "px" },
+    });
 
     setIsTargetOn(true);
   };
@@ -71,8 +93,8 @@ const EasyMode = () => {
       <div ref={containerRef} className="game-container">
         {isTargetOn && (
           <img
-            style={targetPosition}
-            src="/static/icons/ethereum.png"
+            style={targetSpecs.position}
+            src={targetSpecs.iconPath}
             alt="target"
             className="target"
             onClick={hitTarget}
