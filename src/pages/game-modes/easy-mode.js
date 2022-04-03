@@ -21,6 +21,8 @@ const EasyMode = () => {
     isCrypto: true,
     position: null,
   });
+  const [countdown, setCountdown] = useState(10);
+  const [isCountdownOn, setIsCountdownOn] = useState(false);
 
   useEffect(() => {
     document.addEventListener("mousemove", (e) => {
@@ -36,12 +38,30 @@ const EasyMode = () => {
     return () => clearInterval(intervalRef.current);
   }, [isGameOn]);
 
+  useEffect(() => {
+    if (isCountdownOn) {
+      countdownTimerRef.current = setInterval(checkCountdown, 1000);
+    }
+
+    return () => clearInterval(countdownTimerRef.current);
+  }, [isCountdownOn]);
+
+  // USING REF HOOKS TO MAKE UPDATED STATE VALUE WORK INSIDE CALLBACK FUNCTION OF SETINTERVAL
+  useEffect(() => {
+    countdownRef.current = countdown;
+  }, [countdown]);
+
   const containerRef = useRef();
   const intervalRef = useRef();
+
+  // USING REF HOOKS TO MAKE UPDATED STATE VALUE WORK INSIDE CALLBACK FUNCTION OF SETINTERVAL
+  const countdownTimerRef = useRef();
+  const countdownRef = useRef();
 
   const startGame = () => {
     setIsGameOn(true);
     setIsTargetOn(true);
+    setIsCountdownOn(true);
   };
 
   const spawnTarget = () => {
@@ -66,7 +86,20 @@ const EasyMode = () => {
 
   const hitTarget = () => {
     setIsTargetOn(false);
-    setPoints((prev) => prev + 1);
+    if (targetSpecs.isCrypto) setPoints((prev) => prev + 1);
+    else {
+      if (points > 0) setPoints((prev) => prev - 1);
+    }
+  };
+
+  const checkCountdown = () => {
+    if (countdownRef.current > 0) {
+      setCountdown((prev) => prev - 1);
+    } else {
+      setIsGameOn(false);
+      setIsTargetOn(false);
+      setIsCountdownOn(false);
+    }
   };
 
   return (
@@ -81,6 +114,7 @@ const EasyMode = () => {
           </button>
         )}
         <h3>Points: {points}</h3>
+        <h3>{countdown} seconds remains</h3>
       </header>
 
       <img
@@ -88,6 +122,7 @@ const EasyMode = () => {
         className="cursor"
         src="/static/icons/grab.png"
         alt="grab cursor"
+        draggable="false"
       />
 
       <div ref={containerRef} className="game-container">
@@ -98,6 +133,7 @@ const EasyMode = () => {
             alt="target"
             className="target"
             onClick={hitTarget}
+            draggable="false"
           />
         )}
       </div>
