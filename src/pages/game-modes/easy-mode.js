@@ -30,7 +30,7 @@ const EasyMode = () => {
     isCrypto: true,
     position: null,
   });
-  const [countdown, setCountdown] = useState(10);
+  const [countdown, setCountdown] = useState(60);
   const [isCountdownOn, setIsCountdownOn] = useState(false);
   const [isGameFinished, setIsGameFinished] = useState(false);
 
@@ -152,9 +152,11 @@ const EasyMode = () => {
   return (
     <main>
       <header>
-        <Link href="/">
-          <a className="logo">Aim Training</a>
-        </Link>
+        {!isGameOn && (
+          <Link href="/">
+            <a className="logo">Aim Training</a>
+          </Link>
+        )}
         {!isGameOn && (
           <button className="start-btn" onClick={startGame}>
             Start Game
