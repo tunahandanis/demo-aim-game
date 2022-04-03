@@ -22,8 +22,6 @@ const EasyMode = () => {
     return () => clearInterval(intervalRef.current);
   }, [isGameOn]);
 
-  let target;
-
   const containerRef = useRef();
   const intervalRef = useRef();
 
@@ -62,12 +60,14 @@ const EasyMode = () => {
         )}
         <h3>Points: {points}</h3>
       </header>
+
       <img
         style={cursorStyle}
         className="cursor"
         src="/static/icons/grab.png"
         alt="grab cursor"
       />
+
       <div ref={containerRef} className="game-container">
         {isTargetOn && (
           <img
