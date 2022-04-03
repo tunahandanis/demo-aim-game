@@ -30,7 +30,7 @@ const HardMode = () => {
     isCrypto: true,
     position: null,
   });
-  const [countdown, setCountdown] = useState(60);
+  const [countdown, setCountdown] = useState(30);
   const [isCountdownOn, setIsCountdownOn] = useState(false);
   const [isGameFinished, setIsGameFinished] = useState(false);
 
@@ -75,6 +75,10 @@ const HardMode = () => {
     countdownRef.current = countdown;
   }, [countdown]);
 
+  useEffect(() => {
+    startingPointsRef.current = points;
+  }, []);
+
   /*
   =========
   REF HOOKS
@@ -83,6 +87,7 @@ const HardMode = () => {
 
   const containerRef = useRef();
   const intervalRef = useRef();
+  const startingPointsRef = useRef();
 
   // USING REF HOOKS TO MAKE UPDATED STATE VALUE WORK INSIDE CALLBACK FUNCTION OF SETINTERVAL
   const countdownTimerRef = useRef();
@@ -187,7 +192,9 @@ const HardMode = () => {
         )}
       </div>
 
-      {isGameFinished && <FinishModal />}
+      {isGameFinished && (
+        <FinishModal startingPoints={startingPointsRef.current} />
+      )}
     </main>
   );
 };
