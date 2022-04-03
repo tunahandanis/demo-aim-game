@@ -7,13 +7,13 @@ export default function Home() {
     <main>
       <div className="btn-container">
         <Link href="/game-modes/easy-mode">
-          <a>Easy</a>
+          <a className="link-btn">Easy</a>
         </Link>
         <Link href="/game-modes/medium-mode">
-          <a>Medium</a>
+          <a className="link-btn">Medium</a>
         </Link>
         <Link href="/game-modes/hard-mode">
-          <a>Hard</a>
+          <a className="link-btn">Hard</a>
         </Link>
       </div>
     </main>
