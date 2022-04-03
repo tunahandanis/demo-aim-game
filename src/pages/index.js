@@ -15,10 +15,10 @@ export default function Home() {
           <a className="link-btn">Easy</a>
         </Link>
         <Link href="/game-modes/medium-mode">
-          <a className="link-btn">Medium</a>
+          <a className={`link-btn ${points < 25 && "locked-btn"}`}>Medium</a>
         </Link>
         <Link href="/game-modes/hard-mode">
-          <a className="link-btn">Hard</a>
+          <a className={`link-btn ${points < 50 && "locked-btn"}`}>Hard</a>
         </Link>
       </div>
     </main>

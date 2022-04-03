@@ -7,3 +7,8 @@
   text-decoration: none;
   margin: 0 1em;
 }
+
+.locked-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
