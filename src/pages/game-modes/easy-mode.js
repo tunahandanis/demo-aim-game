@@ -168,7 +168,7 @@ const EasyMode = () => {
           </button>
         )}
         <h3>Points: {points}</h3>
-        <h3>{countdown} seconds remains</h3>
+        <h3>{countdown} seconds remain</h3>
       </header>
 
       <img

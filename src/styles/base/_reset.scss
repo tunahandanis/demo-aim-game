@@ -4,6 +4,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  cursor: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
