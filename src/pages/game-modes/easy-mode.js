@@ -177,6 +177,42 @@ const EasyMode = () => {
         )}
       </div>
 
+      {/*THIS IS FOR EMULATING THE EFFECTS OF PRE-CACHING
+      THE IMAGES WERE LAGGING DUE TO CONSTANT RE-DOWNLOADING OF EVERY NEW IMAGE
+      NOT THE CLEANEST CODE, BUT IT DOES THE JOB  */}
+      <div style={{ display: "none" }}>
+        <img
+          src="/static/icons/bitcoin.png"
+          alt="false image"
+          className="target"
+        />
+        <img
+          src="/static/icons/ethereum.png"
+          alt="false image"
+          className="target"
+        />
+        <img
+          src="/static/icons/binance.png"
+          alt="false image"
+          className="target"
+        />
+        <img
+          src="/static/icons/dollar-symbol.png"
+          alt="false image"
+          className="target"
+        />
+        <img
+          src="/static/icons/euro.png"
+          alt="false image"
+          className="target"
+        />
+        <img
+          src="/static/icons/pound-sterling.png"
+          alt="false image"
+          className="target"
+        />
+      </div>
+
       {isGameFinished && (
         <FinishModal startingPoints={startingPointsRef.current} />
       )}
