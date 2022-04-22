@@ -21,7 +21,6 @@ const HardMode = () => {
   ===========
   */
 
-  const [cursorStyle, setCursorStyle] = useState();
   const [isGameOn, setIsGameOn] = useState(false);
   const [isTargetOn, setIsTargetOn] = useState(false);
   const [targetSpecs, setTargetSpecs] = useState({
@@ -47,12 +46,6 @@ const HardMode = () => {
   EFFECT HOOKS
   ============
   */
-
-  useEffect(() => {
-    document.addEventListener("mousemove", (e) => {
-      setCursorStyle({ top: e.pageY + "px", left: e.pageX + "px" });
-    });
-  }, []);
 
   useEffect(() => {
     if (isGameOn) {
@@ -170,14 +163,6 @@ const HardMode = () => {
         <h3>Points: {points}</h3>
         <h3>{countdown} seconds remain</h3>
       </header>
-
-      <img
-        style={cursorStyle}
-        className="cursor"
-        src="/static/icons/grab.png"
-        alt="grab cursor"
-        draggable="false"
-      />
 
       <div ref={containerRef} className="game-container">
         {isTargetOn && (
