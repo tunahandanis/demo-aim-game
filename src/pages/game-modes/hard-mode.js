@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 
-import FinishModal from "../../components/finish-modal";
+import FinishModal from "../../components/FinishModal";
 
 import { usePointsContext } from "../../context/context.js";
 
