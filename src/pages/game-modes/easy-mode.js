@@ -32,6 +32,7 @@ const EasyMode = () => {
   const [countdown, setCountdown] = useState(30);
   const [isCountdownOn, setIsCountdownOn] = useState(false);
   const [isGameFinished, setIsGameFinished] = useState(false);
+  const [pointsEarned, setPointsEarned] = useState(0);
 
   /*
   =======
@@ -69,8 +70,8 @@ const EasyMode = () => {
   }, [countdown]);
 
   useEffect(() => {
-    startingPointsRef.current = points;
-  }, []);
+    pointsEarnedRef.current = pointsEarned;
+  }, [pointsEarned]);
 
   /*
   =========
@@ -80,11 +81,11 @@ const EasyMode = () => {
 
   const containerRef = useRef();
   const intervalRef = useRef();
-  const startingPointsRef = useRef();
 
   // USING REF HOOKS TO MAKE UPDATED STATE VALUE WORK INSIDE CALLBACK FUNCTION OF SETINTERVAL
   const countdownTimerRef = useRef();
   const countdownRef = useRef();
+  const pointsEarnedRef = useRef();
 
   /*
   =========
@@ -120,9 +121,9 @@ const EasyMode = () => {
 
   const hitTarget = () => {
     setIsTargetOn(false);
-    if (targetSpecs.isCrypto) updatePoints(points + 1);
+    if (targetSpecs.isCrypto) setPointsEarned((prev) => prev + 1);
     else {
-      if (points > 0) updatePoints(points - 1);
+      if (pointsEarned > 0) setPointsEarned((prev) => prev - 1);
     }
   };
 
@@ -135,6 +136,7 @@ const EasyMode = () => {
   };
 
   const finishGame = () => {
+    updatePoints(points + pointsEarnedRef.current);
     setIsGameOn(false);
     setIsTargetOn(false);
     setIsCountdownOn(false);
@@ -160,7 +162,7 @@ const EasyMode = () => {
             Start Game
           </button>
         )}
-        <h3>Points: {points}</h3>
+        <h3>Points earned: {pointsEarned}</h3>
         <h3>{countdown} seconds remain</h3>
       </header>
 
@@ -213,9 +215,7 @@ const EasyMode = () => {
         />
       </div>
 
-      {isGameFinished && (
-        <FinishModal startingPoints={startingPointsRef.current} />
-      )}
+      {isGameFinished && <FinishModal pointsEarned={pointsEarned} />}
     </main>
   );
 };

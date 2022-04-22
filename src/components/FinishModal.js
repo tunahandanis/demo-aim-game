@@ -1,27 +1,22 @@
 import Link from "next/link";
-import { usePointsContext } from "../context/context.js";
 
-const FinishModal = ({ startingPoints }) => {
-  const { points } = usePointsContext();
-
+const FinishModal = ({ pointsEarned }) => {
   return (
     <div className="modal-overlay">
       <div className="finish-modal">
         <h1>You finished the game!</h1>
         <h2>
           Points difference:
-          {points - startingPoints > 0 ? (
+          {pointsEarned > 0 ? (
             <span style={{ color: "green", marginLeft: ".5em" }}>
-              {points - startingPoints}
+              {pointsEarned}
             </span>
-          ) : points - startingPoints < 0 ? (
+          ) : pointsEarned < 0 ? (
             <span style={{ color: "red", marginLeft: ".5em" }}>
-              {points - startingPoints}
+              {pointsEarned}
             </span>
           ) : (
-            <span style={{ marginLeft: ".5em" }}>
-              {points - startingPoints}
-            </span>
+            <span style={{ marginLeft: ".5em" }}>{pointsEarned}</span>
           )}
         </h2>
         <Link href="/">
