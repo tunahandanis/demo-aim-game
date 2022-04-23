@@ -14,7 +14,7 @@ const iconPathArray = [
   "/static/icons/pound-sterling.png",
 ];
 
-const EasyMode = () => {
+const LevelTwo = () => {
   /*
   ===========
   STATE HOOKS
@@ -50,7 +50,7 @@ const EasyMode = () => {
 
   useEffect(() => {
     if (isGameOn) {
-      intervalRef.current = setInterval(spawnTarget, 1000);
+      intervalRef.current = setInterval(spawnTarget, 1250);
     }
 
     return () => clearInterval(intervalRef.current);
@@ -121,9 +121,9 @@ const EasyMode = () => {
 
   const hitTarget = () => {
     setIsTargetOn(false);
-    if (targetSpecs.isCrypto) setPointsEarned((prev) => prev + 1);
+    if (targetSpecs.isCrypto) setPointsEarned((prev) => prev + 2);
     else {
-      if (pointsEarned > 0) setPointsEarned((prev) => prev - 1);
+      if (pointsEarned > 0) setPointsEarned((prev) => prev - 2);
     }
   };
 
@@ -220,4 +220,4 @@ const EasyMode = () => {
   );
 };
 
-export default EasyMode;
+export default LevelTwo;

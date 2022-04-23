@@ -12,14 +12,20 @@ export default function Home() {
         <h2>Points: {points}</h2>
       </header>
       <div className="btn-container">
-        <Link href="/game-modes/easy-mode">
-          <a className="link-btn">Easy</a>
+        <Link href="/game-modes/level-one">
+          <a className="link-btn">Level 1</a>
         </Link>
-        <Link href="/game-modes/medium-mode">
-          <a className={`link-btn ${points < 25 && "locked-btn"}`}>Medium</a>
+        <Link href="/game-modes/level-two">
+          <a className="link-btn">Level 2</a>
         </Link>
-        <Link href="/game-modes/hard-mode">
-          <a className={`link-btn ${points < 50 && "locked-btn"}`}>Hard</a>
+        <Link href="/game-modes/level-three">
+          <a className="link-btn">Level 3</a>
+        </Link>
+        <Link href="/game-modes/level-four">
+          <a className="link-btn">Level 4</a>
+        </Link>
+        <Link href="/game-modes/level-five">
+          <a className="link-btn">Level 5</a>
         </Link>
       </div>
 

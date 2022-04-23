@@ -14,7 +14,7 @@ const iconPathArray = [
   "/static/icons/pound-sterling.png",
 ];
 
-const MediumMode = () => {
+const LevelThree = () => {
   /*
   ===========
   STATE HOOKS
@@ -50,7 +50,7 @@ const MediumMode = () => {
 
   useEffect(() => {
     if (isGameOn) {
-      intervalRef.current = setInterval(spawnTarget, 750);
+      intervalRef.current = setInterval(spawnTarget, 1000);
     }
 
     return () => clearInterval(intervalRef.current);
@@ -121,9 +121,9 @@ const MediumMode = () => {
 
   const hitTarget = () => {
     setIsTargetOn(false);
-    if (targetSpecs.isCrypto) setPointsEarned((prev) => prev + 2);
+    if (targetSpecs.isCrypto) setPointsEarned((prev) => prev + 3);
     else {
-      if (pointsEarned > 0) setPointsEarned((prev) => prev - 2);
+      if (pointsEarned > 0) setPointsEarned((prev) => prev - 3);
     }
   };
 
@@ -220,4 +220,4 @@ const MediumMode = () => {
   );
 };
 
-export default MediumMode;
+export default LevelThree;
