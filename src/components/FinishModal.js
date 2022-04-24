@@ -6,7 +6,7 @@ const FinishModal = ({ pointsEarned }) => {
       <div className="finish-modal">
         <h1>You finished the game!</h1>
         <h2>
-          Points difference:
+          Points earned:
           {pointsEarned > 0 ? (
             <span style={{ color: "green", marginLeft: ".5em" }}>
               {pointsEarned}
