@@ -152,12 +152,12 @@ const LevelTwo = () => {
   return (
     <main>
       <header>
-        {!isGameOn && (
+        {!isGameOn && !isGameFinished && (
           <Link href="/">
-            <a className="logo">Aim Training</a>
+            <a className="logo">Home</a>
           </Link>
         )}
-        {!isGameOn && (
+        {!isGameOn && !isGameFinished && (
           <button className="start-btn" onClick={startGame}>
             Start Game
           </button>
