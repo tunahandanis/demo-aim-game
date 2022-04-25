@@ -7,10 +7,41 @@
   border: 1px solid #fff;
   padding: 3em;
   text-align: center;
+  color: #252525;
+  background-color: #f2f2f2;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+
+  h2 {
+    margin-bottom: 0.7em;
+    font-size: 2.2rem;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 1em;
+  }
 
   a {
+    font-size: 1.7rem;
     text-decoration: none;
-    color: aqua;
+    color: #535353;
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    color: #000;
+  }
+
+  span {
+    font-size: 2rem;
+    color: rgb(0, 107, 156);
+    margin-left: 0.3em;
   }
 }
 

@@ -1,18 +1,26 @@
 .logo {
   text-decoration: none;
   color: #fff;
-  font-size: 2rem;
-  margin: 1em;
+  font-size: 2.2rem;
+  font-family: "Bangers", cursive;
+  letter-spacing: 5px;
 }
 
 header {
   height: 10vh;
+
+  h2 {
+    margin: 1em;
+    font-weight: 500;
+  }
+
+  h3 {
+    margin: 1em 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
 }
 
-h2 {
-  margin: 1em;
-}
-
-h3 {
-  margin: 1em;
+.game-header {
+  margin: 2.5em;
 }

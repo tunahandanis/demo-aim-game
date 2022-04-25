@@ -3,5 +3,12 @@
   display: grid;
   grid-template-columns: repeat(5, 20em);
   justify-content: center;
-  margin-top: 10em;
+  margin-top: 5em;
+}
+
+.title {
+  text-align: center;
+  font-size: 5rem;
+  letter-spacing: 20px;
+  font-family: "Bangers", cursive;
 }

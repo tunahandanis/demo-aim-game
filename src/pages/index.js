@@ -12,73 +12,56 @@ export default function Home() {
   return (
     <main>
       <header>
-        <h2>Points: {points}</h2>
+        <h2>TILE Points: {points}</h2>
       </header>
+
+      <h1 className="title">AIM TRAINER</h1>
+
       <div className="btn-container">
         <Card
           destination={"/game-modes/level-one"}
           level={1}
           modeName={"Spot Trader"}
-          description={"Win/Lose 1 Points per hit"}
+          description={"Win/Lose 1 points per hit"}
           img={"/static/images/Level 1 - Spot Trader.png"}
         />
         <Card
           destination={"/game-modes/level-two"}
           level={2}
           modeName={"Leverage Trader"}
-          description={"Win/Lose 2 Points per hit"}
+          description={"Win/Lose 2 points per hit"}
           img={"/static/images/Level 2 - Leverage Trader.png"}
         />
         <Card
           destination={"/game-modes/level-three"}
           level={3}
           modeName={"HODLer"}
-          description={"Win/Lose 3 Points per hit"}
+          description={"Win/Lose 3 points per hit"}
           img={"/static/images/Level 3 - Hodler.png"}
         />
         <Card
           destination={"/game-modes/level-four"}
           level={4}
           modeName={"Developer"}
-          description={"Win/Lose 4 Points per hit"}
+          description={"Win/Lose 4 points per hit"}
           img={"/static/images/Level 4 - Developer.png"}
         />
         <Card
           destination={"/game-modes/level-five"}
           level={5}
           modeName={"Satoshi"}
-          description={"Win/Lose 5 Points per hit"}
+          description={"Win/Lose 5 points per hit"}
           img={"/static/images/Level 5 - Satoshi.png"}
         />
-        {/* <Link href="/game-modes/level-one">
-          <a className="link-btn">Level 1</a>
-        </Link>
-        <Link href="/game-modes/level-two">
-          <a className="link-btn">Level 2</a>
-        </Link>
-        <Link href="/game-modes/level-three">
-          <a className="link-btn">Level 3</a>
-        </Link>
-        <Link href="/game-modes/level-four">
-          <a className="link-btn">Level 4</a>
-        </Link>
-        <Link href="/game-modes/level-five">
-          <a className="link-btn">Level 5</a>
-        </Link> */}
       </div>
 
       <div className="guide">
-        <h2>Guide</h2>
-        <p>
-          Pick cryptocurrencies to win points <br />
-          Pick fiat currencies to lose points
+        <h2 className="guide__title">How to Play</h2>
+        <p className="guide__para">
+          If you hit cryptocurrencies, you win TILE Points
         </p>
-        <p>
-          Win/lose 1 point per currency in easy mode, 2 in medium, 3 in hard
-          mode
-        </p>
-        <p>
-          You need 25 points to enter medium mode and 50 points for hard mode
+        <p className="guide__para">
+          If you hit fiat money, you lose TILE Points earned in the same round
         </p>
       </div>
     </main>

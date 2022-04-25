@@ -151,20 +151,24 @@ const LevelOne = () => {
 
   return (
     <main>
-      <header>
+      <header className="game-header">
         {!isGameOn && !isGameFinished && (
           <Link href="/">
-            <a className="logo">Home</a>
+            <a className="logo">Aim Trainer</a>
           </Link>
         )}
-        {!isGameOn && !isGameFinished && (
-          <button className="start-btn" onClick={startGame}>
-            Start Game
-          </button>
-        )}
+
         <h3>Points earned: {pointsEarned}</h3>
         <h3>{countdown} seconds remain</h3>
       </header>
+
+      {!isGameOn && !isGameFinished && (
+        <div className="start-btn-container">
+          <button className="start-btn" onClick={startGame}>
+            Start
+          </button>
+        </div>
+      )}
 
       <div ref={containerRef} className="game-container">
         {isTargetOn && (

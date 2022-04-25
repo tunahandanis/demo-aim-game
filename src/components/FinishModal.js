@@ -4,21 +4,11 @@ const FinishModal = ({ pointsEarned }) => {
   return (
     <div className="modal-overlay">
       <div className="finish-modal">
-        <h1>You finished the game!</h1>
-        <h2>
+        <h2>You finished the game!</h2>
+        <h3>
           Points earned:
-          {pointsEarned > 0 ? (
-            <span style={{ color: "green", marginLeft: ".5em" }}>
-              {pointsEarned}
-            </span>
-          ) : pointsEarned < 0 ? (
-            <span style={{ color: "red", marginLeft: ".5em" }}>
-              {pointsEarned}
-            </span>
-          ) : (
-            <span style={{ marginLeft: ".5em" }}>{pointsEarned}</span>
-          )}
-        </h2>
+          <span>{pointsEarned}</span>
+        </h3>
         <Link href="/">
           <a>Back to home</a>
         </Link>

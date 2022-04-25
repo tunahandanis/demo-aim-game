@@ -1,7 +1,7 @@
 .card {
   position: relative;
   margin: 2em;
-  background: rgb(41, 41, 41);
+  background: rgb(0, 0, 0);
 
   &::before,
   &::after {
@@ -69,10 +69,10 @@
   &__level {
     font-size: 1.8rem;
     color: white;
-    margin-bottom: 0;
     letter-spacing: 2px;
     margin-bottom: 0.3em;
-    padding-top: 0.8em;
+    padding-top: 1.2em;
+    text-transform: uppercase;
     font-weight: 400;
   }
 
@@ -85,5 +85,6 @@
 
   &__desc {
     font-size: 1.3rem;
+    line-height: 1.4;
   }
 }
