@@ -1,3 +1,3 @@
-# DEMO AIM GAME
+# AIM TRAINER
 
-A very robust version of a P2E aim training game. Likely full of bugs.
+P2E Aim Trainer game for TILE Games.
