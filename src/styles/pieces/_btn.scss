@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .link-btn {
   color: #fff;
   padding: 0.5em 1em;
@@ -25,6 +27,18 @@
   letter-spacing: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
+
+  @include mq(laptop) {
+    font-size: 1.4rem;
+  }
+
+  @include mq(medium) {
+    font-size: 1.25rem;
+  }
+
+  @include mq(irrelevant) {
+    font-size: 1rem;
+  }
 
   &:hover {
     color: #000;

@@ -1,9 +1,23 @@
+@use "../abstracts/mixins" as *;
+
 .logo {
   text-decoration: none;
   color: #fff;
   font-size: 2.2rem;
   font-family: "Bangers", cursive;
   letter-spacing: 5px;
+
+  @include mq(laptop) {
+    font-size: 2rem;
+  }
+
+  @include mq(medium) {
+    font-size: 1.8rem;
+  }
+
+  @include mq(irrelevant) {
+    font-size: 1.6rem;
+  }
 }
 
 header {
@@ -12,12 +26,32 @@ header {
   h2 {
     margin: 1em;
     font-weight: 500;
+
+    @include mq(medium) {
+      font-size: 1.3rem;
+    }
+
+    @include mq(small) {
+      font-size: 1.2rem;
+    }
   }
 
   h3 {
     margin: 1em 0;
     font-size: 1.4rem;
     font-weight: 400;
+
+    @include mq(laptop) {
+      font-size: 1.3rem;
+    }
+
+    @include mq(medium) {
+      font-size: 1.2rem;
+    }
+
+    @include mq(irrelevant) {
+      font-size: 1.1rem;
+    }
   }
 }
 

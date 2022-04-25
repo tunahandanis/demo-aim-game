@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .card {
   position: relative;
   margin: 2em;
@@ -13,6 +15,27 @@
     right: 1em;
     opacity: 1;
     transition: transform ease-out 250ms;
+
+    @include mq(laptop) {
+      top: 0.9em;
+      bottom: 0.9em;
+      left: 0.9em;
+      right: 0.9em;
+    }
+
+    @include mq(medium) {
+      top: 0.75em;
+      bottom: 0.75em;
+      left: 0.75em;
+      right: 0.75em;
+    }
+
+    @include mq(small) {
+      top: 0.5em;
+      bottom: 0.5em;
+      left: 0.5em;
+      right: 0.5em;
+    }
   }
 
   &::before {
@@ -74,6 +97,25 @@
     padding-top: 1.2em;
     text-transform: uppercase;
     font-weight: 400;
+
+    @include mq(largest) {
+      font-size: 1.5rem;
+      padding-top: 1.8em;
+    }
+
+    @include mq(laptop) {
+      font-size: 1.4rem;
+      padding-top: 3em;
+    }
+
+    @include mq(medium) {
+      font-size: 1.25rem;
+    }
+
+    @include mq(small) {
+      font-size: 1rem;
+      padding-top: 3.5em;
+    }
   }
 
   &__name {
@@ -81,10 +123,46 @@
     letter-spacing: 1px;
     margin-bottom: 2em;
     font-weight: 400;
+
+    @include mq(largest) {
+      font-size: 1.4rem;
+      margin-bottom: 1.8em;
+    }
+
+    @include mq(laptop) {
+      font-size: 1.3rem;
+      margin-bottom: 1.3em;
+    }
+
+    @include mq(medium) {
+      font-size: 1.15rem;
+      margin-bottom: 0.9em;
+    }
+
+    @include mq(small) {
+      font-size: 0.9rem;
+      margin-bottom: 0.7em;
+    }
   }
 
   &__desc {
     font-size: 1.3rem;
     line-height: 1.4;
+
+    @include mq(largest) {
+      font-size: 1.2rem;
+    }
+
+    @include mq(laptop) {
+      font-size: 1.1rem;
+    }
+
+    @include mq(medium) {
+      font-size: 1rem;
+    }
+
+    @include mq(small) {
+      font-size: 0.75rem;
+    }
   }
 }
