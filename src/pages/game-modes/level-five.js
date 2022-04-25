@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
+
 import Link from "next/link";
+import Head from "next/head";
 
 import FinishModal from "../../components/FinishModal";
 
@@ -151,6 +153,12 @@ const LevelFive = () => {
 
   return (
     <main>
+      <Head>
+        <title>Level Five | Aim Trainer</title>
+        <meta name="description" content="Level Five of the game Aim Trainer" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <header className="game-header">
         {!isGameOn && !isGameFinished && (
           <Link href="/">

@@ -11,6 +11,12 @@ export default function Home() {
 
   return (
     <main>
+      <Head>
+        <title>Aim Trainer | TILE Games</title>
+        <meta name="description" content="Aim Trainer game by TILE Games." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <header>
         <h2>TILE Points: {points}</h2>
       </header>
