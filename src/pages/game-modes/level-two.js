@@ -103,7 +103,7 @@ const LevelTwo = () => {
     const containerHeight = containerRef.current.offsetHeight;
     const containerWidth = containerRef.current.offsetWidth;
 
-    const randomTop = Math.random() * (containerHeight - 200);
+    const randomTop = Math.random() * (containerHeight - 300);
     const randomLeft = Math.random() * (containerWidth - 200);
 
     const iconIndex = Math.floor(Math.random() * 6);
