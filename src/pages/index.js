@@ -14,6 +14,7 @@ export default function Home() {
       <Head>
         <title>Aim Trainer | TILE Games</title>
         <meta name="description" content="Aim Trainer game by TILE Games." />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

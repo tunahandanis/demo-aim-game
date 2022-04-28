@@ -162,7 +162,7 @@ const LevelFive = () => {
       <header className="game-header">
         {!isGameOn && !isGameFinished && (
           <Link href="/">
-            <a className="logo">Aim Trainer</a>
+            <a className="logo">AIM TRAINER</a>
           </Link>
         )}
 
