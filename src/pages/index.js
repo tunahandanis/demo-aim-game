@@ -10,7 +10,7 @@ export default function Home() {
   const { points } = usePointsContext();
 
   return (
-    <main>
+    <>
       <Head>
         <title>Aim Trainer | TILE Games</title>
         <meta name="description" content="Aim Trainer game by TILE Games." />
@@ -71,6 +71,15 @@ export default function Home() {
           If you hit fiat money, you lose TILE Points earned in the same round
         </p>
       </div>
-    </main>
+      <footer>
+        <h4>2022 © TILE Gaming</h4>
+        <div className="attribution">
+          Icons made by{" "}
+          <a href="https://www.flaticon.com/authors/freepik">Freepik</a>,{" "}
+          <a href="https://www.flaticon.com/authors/blak1ta">Blak1ta</a> from{" "}
+          <a href="https://www.flaticon.com/">Flaticon</a>
+        </div>
+      </footer>
+    </>
   );
 }
