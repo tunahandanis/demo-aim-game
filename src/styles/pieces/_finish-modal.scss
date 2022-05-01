@@ -142,3 +142,29 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.modal__warning {
+  font-size: 1.2rem;
+  color: rgb(224, 0, 0);
+  margin-bottom: 1em;
+
+  @include mq(largest) {
+    font-size: 1.1rem;
+  }
+
+  @include mq(laptop) {
+    font-size: 1rem;
+  }
+
+  @include mq(medium) {
+    font-size: 0.9rem;
+  }
+
+  @include mq(small) {
+    font-size: 0.8rem;
+  }
+
+  @include mq(irrelevant) {
+    font-size: 0.7rem;
+  }
+}

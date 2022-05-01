@@ -9,6 +9,11 @@ const FinishModal = ({ pointsEarned }) => {
           Points earned:
           <span>{pointsEarned}</span>
         </h3>
+        <p className="modal__warning">
+          Please make sure to convert your <br /> TILE Points in the main menu
+          as they will be lost <br /> if you refresh the page or close the
+          browser.
+        </p>
         <Link href="/">
           <a>Back to home</a>
         </Link>
