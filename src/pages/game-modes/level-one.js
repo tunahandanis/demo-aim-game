@@ -10,7 +10,7 @@ import { usePointsContext } from "../../context/context.js";
 const iconPathArray = [
   "/static/icons/bitcoin.png",
   "/static/icons/ethereum.png",
-  "/static/icons/binance.png",
+  "/static/icons/rose.png",
   "/static/icons/dollar-symbol.png",
   "/static/icons/euro.png",
   "/static/icons/pound-sterling.png",
