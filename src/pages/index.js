@@ -60,7 +60,7 @@ export default function Home() {
         signer
       );
 
-      const tokenToClaim = points / 20;
+      const tokenToClaim = points / 25;
 
       let transaction = await connectedContract.claimTile(
         ethers.utils.parseUnits(tokenToClaim.toString(), "ether")
@@ -84,8 +84,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Aim Trainer | TILE Games</title>
-        <meta name="description" content="Aim Trainer game by TILE Games." />
+        <title>Crypto Shooter | TILE Games</title>
+        <meta name="description" content="Crypto Shooter game by TILE Games." />
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -109,13 +109,13 @@ export default function Home() {
             </button>
           </div>
           <p className="conversion__exchange-info">
-            20 TILE Points = 1 TILE Token
+            25 TILE Points = 1 TILE Token
           </p>
           <p className="conversion__warning">Frequent conversion is advised</p>
         </div>
       </header>
 
-      <h1 className="title">AIM TRAINER</h1>
+      <h1 className="title">CRYPTO SHOOTER</h1>
 
       <div className="btn-container">
         <Card

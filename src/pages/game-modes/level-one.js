@@ -154,15 +154,18 @@ const LevelOne = () => {
   return (
     <main>
       <Head>
-        <title>Level One | Aim Trainer</title>
-        <meta name="description" content="Level One of the game Aim Trainer" />
+        <title>Level One | Crypto Shooter</title>
+        <meta
+          name="description"
+          content="Level One of the game Crypto Shooter"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <header className="game-header">
         {!isGameOn && !isGameFinished && (
           <Link href="/">
-            <a className="logo">AIM TRAINER</a>
+            <a className="logo">CRYPTO SHOOTER</a>
           </Link>
         )}
 

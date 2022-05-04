@@ -154,14 +154,17 @@ const LevelTwo = () => {
   return (
     <main>
       <Head>
-        <title>Level Two | Aim Trainer</title>
-        <meta name="description" content="Level Two of the game Aim Trainer" />
+        <title>Level Two | Crypto Shooter</title>
+        <meta
+          name="description"
+          content="Level Two of the game Crypto Shooter"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className="game-header">
         {!isGameOn && !isGameFinished && (
           <Link href="/">
-            <a className="logo">AIM TRAINER</a>
+            <a className="logo">Crypto Shooter</a>
           </Link>
         )}
 
