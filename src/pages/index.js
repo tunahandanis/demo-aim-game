@@ -66,10 +66,72 @@ export default function Home() {
         ethers.utils.parseUnits(tokenToClaim.toString(), "ether")
       );
 
+      /*
+      ==============================================
+      VARIABLES THAT SHOULD BE INSERTED TO
+      DATABASE ALONG WITH tokenToClaim WHICH'S ABOVE
+      ==============================================
+      */
+
+      const transactionType = "Reward";
+
+      const transactionID = transaction.hash;
+
+      // I'm confused about this, transaction.to seems to be the address Dominic provided,
+      // and transaction.from is my wallet address, isn't it supposed to be the other way around?
+      // For now, I'm switching them up, please correct any mistakes
+      const from = transaction.to;
+      const to = transaction.from;
+
+      const game = "Crypto Shooter";
+
+      const d = new Date();
+      const date = d.toLocaleDateString() + "\n" + d.toLocaleTimeString();
+
       await transaction.wait();
+
+      const consoleMsg =
+        "**********************************\n" +
+        "\nTransaction ID: " +
+        transactionID +
+        "\n\nFrom: " +
+        from +
+        "\n\nTo: " +
+        to +
+        "\n\nTransaction Type: " +
+        transactionType +
+        "\n\nTILE Amount: " +
+        tokenToClaim +
+        "\n\nGame: " +
+        game +
+        "\n\nDate: " +
+        date +
+        "\n\n**********************************";
+
+      /*
+      ===================================================
+      INSERT THE FOLLOWING DATA TO THE TRANSACTIONS TABLE
+
+      string transactionID
+
+      double tokenToClaim: Amount of TILE tokens claimed
+      
+      string transactionType: Type of transaction processed
+
+      string from: User wallet address
+
+      string to: Wallet address from which TILE is withdrawn 
+
+      string game: The game in which the TILE is earned
+
+      string date: Local date and time of transaction
+      ===================================================
+      */
+
       updatePoints(0);
 
       console.log(transaction);
+      console.log(consoleMsg);
     } catch (error) {
       console.log(error);
     }
