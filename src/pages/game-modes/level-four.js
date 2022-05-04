@@ -209,7 +209,7 @@ const LevelFour = () => {
           className="target"
         />
         <img
-          src="/static/icons/binance.png"
+          src="/static/icons/rose.png"
           alt="false image"
           className="target"
         />
