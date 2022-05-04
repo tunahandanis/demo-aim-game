@@ -1,6 +1,6 @@
 // export const advertiserAddress = '0x7790b8300123a497f3E48d871DdF483dCB8d5722';
 
-export const contractAddress = "0xC6026Ee9D0aDaEeD86F4C2B04c40Cb3a5dC27a77";
+export const contractAddress = "0x220B6Ca20db9Af34c2f1A0e47B747C7659523d91";
 export const contractABI = [
   "function mintNFT(string calldata _metadataURI ) external payable",
 
