@@ -10,6 +10,8 @@ import { contractAddress, contractABI } from "../abi/contract";
 
 import { ethers } from "ethers";
 
+import axios from "axios";
+
 import {
   useAccountContext,
   checkIfWalletIsConnected,
@@ -36,6 +38,28 @@ export default function Home() {
   FUNCTIONS
   =========
   */
+
+  async function insertTransaction(
+    transactionID,
+    tokenToClaim,
+    transactionType,
+    from,
+    to,
+    game,
+    date
+  ) {
+    const newTransaction = {
+      transactionId: transactionID,
+      date: date,
+      transactionType: transactionType,
+      from: from,
+      to: to,
+      game: game,
+      tokenToClaim: tokenToClaim,
+    };
+
+    axios.post("http://localhost:3001/makeTransaction", newTransaction);
+  }
 
   // Button text
   let buttonText;
@@ -86,9 +110,19 @@ export default function Home() {
       const game = "Crypto Shooter";
 
       const d = new Date();
-      const date = d.toLocaleDateString() + "\n" + d.toLocaleTimeString();
+      const date = d.toLocaleDateString() + "-" + d.toLocaleTimeString();
 
       await transaction.wait();
+
+      insertTransaction(
+        transactionID,
+        tokenToClaim,
+        transactionType,
+        from,
+        to,
+        game,
+        date
+      );
 
       const consoleMsg =
         "**********************************\n" +
