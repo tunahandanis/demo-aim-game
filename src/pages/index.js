@@ -31,6 +31,12 @@ export default function Home() {
     checkIfWalletIsConnected(accountDispatch);
   }, []);
 
+  /*
+  =========
+  FUNCTIONS
+  =========
+  */
+
   // Button text
   let buttonText;
 
@@ -41,12 +47,6 @@ export default function Home() {
   } else {
     buttonText = "Connect Wallet";
   }
-
-  /*
-  =========
-  FUNCTIONS
-  =========
-  */
 
   const claimTile = async () => {
     try {
@@ -60,7 +60,7 @@ export default function Home() {
         signer
       );
 
-      const tokenToClaim = points / 25;
+      const tokenToClaim = points / 25000;
 
       let transaction = await connectedContract.claimTile(
         ethers.utils.parseUnits(tokenToClaim.toString(), "ether")
@@ -153,7 +153,7 @@ export default function Home() {
       </Head>
 
       <header>
-        <h2>TILE Points: {points}</h2>
+        <h2>Game Points: {points}</h2>
         <div className="conversion">
           <div className="conversion__btn-container">
             <button
@@ -171,9 +171,8 @@ export default function Home() {
             </button>
           </div>
           <p className="conversion__exchange-info">
-            25 TILE Points = 1 TILE Token
+            25000 TILE Points = 1 TILE Token
           </p>
-          <p className="conversion__warning">Frequent conversion is advised</p>
         </div>
       </header>
 
