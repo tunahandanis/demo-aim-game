@@ -201,11 +201,11 @@ export default function Home() {
                 : buttonText}
             </button>
             <button className="conversion__btn" onClick={claimTile}>
-              Convert TILE <br /> Points
+              Convert Game <br /> Points
             </button>
           </div>
           <p className="conversion__exchange-info">
-            25000 TILE Points = 1 TILE Token
+            25000 Game Points = 1 TILE Token
           </p>
         </div>
       </header>
@@ -253,10 +253,10 @@ export default function Home() {
       <div className="guide">
         <h2 className="guide__title">How to Play</h2>
         <p className="guide__para">
-          If you hit cryptocurrencies, you win TILE Points
+          If you hit cryptocurrencies, you win Game Points
         </p>
         <p className="guide__para">
-          If you hit fiat money, you lose TILE Points earned in the same round
+          If you hit fiat money, you lose Game Points earned in the same round
         </p>
       </div>
       <footer>
