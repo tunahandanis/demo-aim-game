@@ -260,7 +260,7 @@ export default function Home() {
         </p>
       </div>
       <footer>
-        <h4>2022 © TILE Gaming</h4>
+        <h4>2022 © TILE Games</h4>
         <div className="attribution">
           Icons made by{" "}
           <a href="https://www.flaticon.com/authors/freepik">Freepik</a>,{" "}
